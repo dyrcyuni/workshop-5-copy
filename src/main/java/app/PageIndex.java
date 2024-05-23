@@ -63,37 +63,30 @@ public class PageIndex implements Handler {
         // Add Div for page Content
         html = html + "<div class='content'>";
 
-        // Next we will ask this *class* for the movies
         ArrayList<String> movieTitles = getMovieTitles();
-
-        // Add HTML for the movies list
         html = html + "<h1>All Movies</h1>";
-        
-        // Start the HTML list
         html = html + "<ul>";
-
-        // Finally we can print out all of the movies
         for (String title : movieTitles) {
             html = html + "<li>" + title + "</li>";
         }
-
-        // Finish the List HTML
         html = html + "</ul>";
         
-        // 🚨 This block of code is for Pre-Req students.
-        // Altneratively we can use JDBCConnection to add HTML for the movies list
-        // Uncomment the code to use the JDBCConnection Objects example(s)
-        // JDBCConnection jdbc = new JDBCConnection();
-        // ArrayList<Movie> movies = jdbc.getMovies();
-        // html = html + "<h1>All Movies with Years (from JDBCConnection)</h1>" +
-        //               "<ul>";
-        // for (Movie movie : movies) {
-        //     html = html + "<li>" + movie.name + " was made in " + movie.year + "</li>";
-        // }
-        // html = html + "</ul>";
 
-        // TODO: Add your code here for the other queries 
+        JDBCConnection jdbc = new JDBCConnection();
 
+        int movieCount = jdbc.countMovies();
+        html = html + "<h1>Movie Count</h1>";
+        html = html + "<p> There are ";
+        html = html + movieCount;
+        html = html + " movies</p>";
+
+        ArrayList<Movie> horrorMovies = jdbc.getMoviesByType("HORROR");
+        html = html + "<h1>Horror Movies</h1>";
+        html = html + "<ul>";
+        for (Movie movie : horrorMovies) {
+            html = html + "<li>" + movie.name + "</li>";
+        }
+        html = html + "</ul>";
 
         // Close Content div
         html = html + "</div>";
