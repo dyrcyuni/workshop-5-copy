@@ -7,14 +7,14 @@
 body {
    font-family: Arial;
    padding: 10px;
-   background: #f1f1f1;
+   background: #ca2;
 }
 
 /* Header (div) formatting */
 .header {
    padding: 10px;
    text-align: center;
-   background-color: #cccccc;
+   background-color: #db2;
    color: #000000;
 }
 
@@ -32,7 +32,7 @@ img.top-image {
 /* Style the top navigation bar */
 .topnav {
    overflow: hidden;
-   background-color: #333;
+   background-color: #a80;
  }
  
  /* Style the topnav links */
@@ -47,18 +47,18 @@ img.top-image {
  
  /* Change color on hover */
  .topnav a:hover {
-   background-color: #ddd;
+   background-color: #fd2;
    color: black;
  }
  
  /* Style the content */
  .content {
-   background-color: #ddd;
+   background-color: #fd2;
    padding: 10px;
  }
  
  /* Style the footer */
  .footer {
-   background-color: #cccccc;
+   background-color: #db2;
    padding: 10px;
  }
